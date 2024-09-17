@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flowchart"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-09 04:37:55 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtN0hMQkEzTE07MjAyNC0wOS0wOTswMjo0OToyMSBQTTsyNjUx"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtN0hMQkEzTE07MjAyNC0wOS0wOTswNDozNzo1NSBQTTszOzI3Njc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pinjaman, cicilan, bungabulan, cicilanbulan" type="Integer" array="False" size=""/>
+            <input variable="pinjaman"/>
+            <input variable="cicilan"/>
+            <if expression="cicilan = 1">
+                <then>
+                    <assign variable="bungabulan" expression="0.09/12 * pinjaman"/>
+                </then>
+                <else>
+                    <if expression="cicilan = 2">
+                        <then>
+                            <assign variable="bungabulan" expression="0.17/12 * pinjaman"/>
+                        </then>
+                        <else>
+                            <if expression="cicilan = 3">
+                                <then>
+                                    <assign variable="bungabulan" expression="0.23/12 * pinjaman"/>
+                                </then>
+                                <else>
+                                    <assign variable="bungabulan" expression="0"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="bungabulan" newline="True"/>
+            <assign variable="cicilanbulan" expression="(pinjaman+ bungabulan)/12"/>
+            <output expression="cicilanbulan" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
